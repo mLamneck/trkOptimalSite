@@ -1,0 +1,18 @@
+{% extends "accounts/base.html" %}
+{% load static %}
+
+{% block body %} 
+	{% include "clientSite/navbar.html" %}
+	<div class="container h-300">
+		<div class="d-flex justify-content-center h-300">
+			<div>
+				<h1>Welcome at the page</h1>
+				<ul>
+					{% if request.user.is_authenticated %}
+					<li><a href="{% url 'accounts:url_editProfile' %}">Edit your profile</a></li>
+					{% endif %}
+				</ul>				
+			</div>
+		</div>
+	</div>
+{% endblock body %}
